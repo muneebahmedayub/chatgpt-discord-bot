@@ -7,7 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 const { DISCORD_TOKEN, OPENAI_ORG, OPENAI_KEY } = process.env;
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end("Hello World");
+});
 
 server.listen(PORT, () => {
   console.log("Server is running on port 3000");
