@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
   res.end("Hello World");
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
   console.log("Server is running on port 3000");
   const client = new Client({
     intents: [
@@ -52,6 +52,6 @@ server.listen(PORT, () => {
     }
   });
 
-  client.login(DISCORD_TOKEN);
+  await client.login(DISCORD_TOKEN);
   console.log("ChatGPT bot is Online on Discord");
 });
