@@ -26,6 +26,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
+  console.log(message.content);
   try {
     if (message.author.bot) return;
     const prompt = `${message.content}`;
